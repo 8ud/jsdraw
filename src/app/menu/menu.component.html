@@ -1,9 +1,52 @@
-Point X <input type="text" [(ngModel)]="pointX" /><br/>
-Point Y<input type="text" [(ngModel)]="pointY"><br/>
-Rayon <input type="text" [(ngModel)]="Rayon"><br/>
+<div class="row top">
+   <div class="input-group mb-3 col-1 offset-1">
+<div class="input-group-prepend">
+<span class="input-group-text" >  Point X  </span>
+</div>
+<input type="text" [(ngModel)]="pointX" class="form-control " /></div>
 
-Hauteur <input type="text" [(ngModel)]="Haut"><br/>
-Largeur <input type="text" [(ngModel)]="Larg"><br/>
+<div class="input-group mb-3 col-1">
+<div class="input-group-prepend">
+<span class="input-group-text" >  Point Y  </span>
+</div>
+<input type="text" [(ngModel)]="pointY" class="form-control "></div>
 
-<button (click)="onAddCercle()">Add cercle</button><br/>
-<button (click)="onAddRectangle()">Add rectangle</button>
+<div class="input-group mb-3 col-1">
+<div class="input-group-prepend">
+<span class="input-group-text" >  Rayon  </span>
+</div>
+<input type="text" [(ngModel)]="Rayon" class="form-control "></div>
+
+<div class="input-group mb-3 col-1">
+<div class="input-group-prepend">
+<span class="input-group-text" >Hauteur</span>
+</div>
+<input type="text" [(ngModel)]="Haut" class="form-control "></div>
+
+<div class="input-group mb-3 col-1">
+<div class="input-group-prepend">
+<span class="input-group-text " >Largeur</span>
+</div>
+<input type="text" [(ngModel)]="Larg" class="form-control "></div>
+<div class="input-group mb-3 col-2">
+<div class="input-group-prepend">
+<span class="input-group-text " >Nom</span>
+</div>
+<input type="text" [(ngModel)]="srvPlan.instancePlan.name" class="form-control "></div>
+<!-- select liste des dessins -->
+<select (change)="onLstChange()" [(ngModel)]="valSelect">
+      <option  *ngFor="let item of srvPlan.listeDesDessins" value="{{item}}">{{item}}</option>
+   </select>
+   
+</div>
+<div>
+<button (click)="onAddCercle()" class="btn btn-outline-info offset-1">Add cercle</button>
+<button (click)="onAddRectangle()" class="btn btn-outline-info offset-1">Add rectangle</button>
+<button (click)="onSaveDessin()" class="btn btn-outline-success offset-1">Save</button>
+<button (click)="onLoadDessin()" class="btn btn-outline-success offset-1">Load</button>
+<button (click)="onDeleteDessin()" class="btn btn-outline-success offset-1">Delete</button>
+</div>
+
+
+
+<!-- <app-geometrie #geometrie></app-geometrie> -->

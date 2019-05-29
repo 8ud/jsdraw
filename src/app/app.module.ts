@@ -7,13 +7,15 @@ import { TestDrawComponent } from './test-draw/test-draw.component';
 import { DrawComponent } from './draw/draw.component';
 import { MenuComponent } from './menu/menu.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { GeometrieComponent } from './geometrie/geometrie.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TestDrawComponent,
     DrawComponent,
-    MenuComponent
+    MenuComponent,
+    GeometrieComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 import { PlanService } from '../plan.service';
 
 @Component({
@@ -7,6 +7,9 @@ import { PlanService } from '../plan.service';
   styleUrls: ['./draw.component.css']
 })
 export class DrawComponent implements OnInit {
+
+   @Input() hauteurCanvas: number = 500;
+   @Input() largeurCanvas: number = 500;
 
    @ViewChild('canvas') canvas:ElementRef;
 
@@ -29,6 +32,7 @@ export class DrawComponent implements OnInit {
  }
 
  draw(){
+   this.context.clearRect(0,0,this.largeurCanvas,this.hauteurCanvas);
    this.srvPlan.instancePlan.display(this.context); //appel affichage du plan
  }
 
